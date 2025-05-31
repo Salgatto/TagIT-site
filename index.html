@@ -41,6 +41,46 @@
 *, *::before, *::after {
     color-scheme: light !important;
 }
+        .hero-logo {
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 1rem;
+    animation: fadeInUp 1s ease;
+}
+
+@media (max-width: 768px) {
+    .hero-logo {
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-logo {
+        max-width: 150px;
+    }
+}
+
+/* NUOVO: Gestione landscape su mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero-logo {
+        max-width: 120px !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.5rem !important;
+        margin: 0.5rem 0 !important;
+    }
+    
+    .hero-content p {
+        font-size: 1rem !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    #home {
+        padding: 2rem 1rem !important;
+    }
+}
 
         * {
             margin: 0;
