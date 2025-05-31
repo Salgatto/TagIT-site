@@ -32,9 +32,52 @@
 
     <link rel="icon" type="image/png" href="logo.png">
     <style>
-/* Forza i colori anche con tema scuro del dispositivo */
-* {
-    color-scheme: light;
+        /* FORZA tema chiaro - impedisce override del tema scuro */
+:root {
+    color-scheme: light only !important;
+}
+
+/* Forza colori su tutti gli elementi */
+*, *::before, *::after {
+    color-scheme: light !important;
+}
+
+/* Forza sfondo e colori del body */
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: #333 !important;
+    min-height: 100vh !important;
+}
+
+/* Forza colori della navbar */
+nav {
+    background: rgba(255, 255, 255, 0.95) !important;
+    color: #333 !important;
+}
+
+.nav-links a {
+    color: #333 !important;
+}
+
+/* Forza colori delle sezioni */
+#home {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+}
+
+#main {
+    background: white !important;
+    color: #333 !important;
+}
+
+#contatti {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%) !important;
+    color: white !important;
+}
+
+/* Forza colori del testo */
+h1, h2, h3, p {
+    color: inherit !important;
 }
 
         * {
