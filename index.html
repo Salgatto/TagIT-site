@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TAGIT - The smart touch of identity</title>
+    <title>TAGIT - The smart touch of identity | Sistema NFC anticontraffazione</title>
 
-<!-- SEO inizio -->
+    <!-- SEO inizio -->
 
     <meta name="description" content="TagIT - Sistema anticontraffazione innovativo con tecnologia NFC e blockchain. Proteggi il tuo brand dalla contraffazione e verifiche digitali.">
     
@@ -28,59 +28,70 @@
     <meta name="twitter:description" content="Proteggi il tuo brand dalla contraffazione con la tecnologia TagIT: soluzioni innovative NFC e blockchain.">
 
     <link rel="canonical" href="https://tagit.cloud">
-<!-- SEO fine -->
+    <!-- SEO fine -->
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    <!-- Fine Google Analytics -->
 
     <link rel="icon" type="image/png" href="logo.png">
     <style>
+    
         /* FORZA tema chiaro - impedisce override del tema scuro */
-:root {
-    color-scheme: light only !important;
-}
-
-/* Forza colori su tutti gli elementi */
-*, *::before, *::after {
-    color-scheme: light !important;
-}
+    :root {
+        color-scheme: light only !important;
+    }
+    
+    /* Forza colori su tutti gli elementi */
+    *, *::before, *::after {
+        color-scheme: light !important;
+    }
+            .hero-logo {
+        max-width: 300px;
+        height: auto;
+        margin-bottom: 1rem;
+        animation: fadeInUp 1s ease;
+    }
+    
+    @media (max-width: 768px) {
         .hero-logo {
-    max-width: 300px;
-    height: auto;
-    margin-bottom: 1rem;
-    animation: fadeInUp 1s ease;
-}
-
-@media (max-width: 768px) {
-    .hero-logo {
-        max-width: 200px;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-logo {
-        max-width: 150px;
-    }
-}
-
-/* NUOVO: Gestione landscape su mobile */
-@media (max-height: 500px) and (orientation: landscape) {
-    .hero-logo {
-        max-width: 120px !important;
-        margin-bottom: 0.5rem !important;
+            max-width: 200px;
+        }
     }
     
-    .hero-content h1 {
-        font-size: 1.5rem !important;
-        margin: 0.5rem 0 !important;
+    @media (max-width: 480px) {
+        .hero-logo {
+            max-width: 150px;
+        }
     }
     
-    .hero-content p {
-        font-size: 1rem !important;
-        margin-bottom: 1rem !important;
+    /* NUOVO: Gestione landscape su mobile */
+    @media (max-height: 500px) and (orientation: landscape) {
+        .hero-logo {
+            max-width: 120px !important;
+            margin-bottom: 0.5rem !important;
+        }
+        
+        .hero-content h1 {
+            font-size: 1.5rem !important;
+            margin: 0.5rem 0 !important;
+        }
+        
+        .hero-content p {
+            font-size: 1rem !important;
+            margin-bottom: 1rem !important;
+        }
+        
+        #home {
+            padding: 2rem 1rem !important;
+        }
     }
-    
-    #home {
-        padding: 2rem 1rem !important;
-    }
-}
 
         * {
             margin: 0;
