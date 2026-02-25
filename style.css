@@ -227,83 +227,69 @@ footer {
 }
 
 
-/* --- SEZIONE SETTORI (MARKETING) --- */
-.verticals-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2.5rem;
-    margin-top: 4rem;
-}
-
-.vertical-card {
-    background: #fff;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
-    transition: all 0.4s ease;
-    border: 1px solid #eee;
-    text-align: left;
-}
-
-.vertical-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 45px rgba(0,0,0,0.12);
-}
-
-.card-image-placeholder {
-    height: 200px;
-    background: #f8f9fa;
+/* --- SEZIONE SETTORI RE-DESIGNED --- */
+.vertical-container {
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
     justify-content: center;
-    font-size: 4rem;
-    border-bottom: 1px solid #eee;
+    padding: 2rem 0;
 }
 
-.card-body {
-    padding: 2rem;
+.market-box {
+    flex: 1;
+    min-width: 300px;
+    max-width: 350px;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    padding: 40px;
+    text-align: center;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(255,255,255,0.3);
 }
 
-.card-tag {
-    display: inline-block;
-    padding: 0.4rem 1rem;
-    background: #eef2ff;
-    color: #667eea;
-    border-radius: 50px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
+.market-box:hover {
+    transform: translateY(-15px);
+    background: #fff;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.1);
 }
 
-.vertical-card h3 {
-    font-size: 1.6rem;
-    margin-bottom: 1rem;
-    color: #1a202c;
+.market-icon {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    display: block;
 }
 
-.vertical-card p {
-    color: #4a5568;
+.market-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    letter-spacing: -0.5px;
+    color: #1a1a1a;
+}
+
+.market-text {
     font-size: 1rem;
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
+    color: #555;
+    line-height: 1.6;
 }
 
-.advantage-list {
-    list-style: none;
-}
-
-.advantage-list li {
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
+/* Rimuoviamo i punti elenco e usiamo piccole pillole grafiche */
+.benefit-pills {
     display: flex;
-    align-items: center;
-    color: #2d3748;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 20px;
 }
 
-.advantage-list li::before {
-    content: "✓";
-    color: #48bb78;
-    font-weight: bold;
-    margin-right: 10px;
+.pill {
+    font-size: 0.75rem;
+    background: #414641;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 100px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
