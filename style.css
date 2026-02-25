@@ -227,12 +227,11 @@ footer {
 }
 
 
-/* --- SEZIONE SETTORI RE-ENGINEERED (STILE PREMIUM) --- */
+/* --- SEZIONE SETTORI DARK TECH (ALTO CONTRASTO) --- */
 #settori {
-    background: #0f172a; /* Blu scurissimo tech */
-    background: radial-gradient(circle at 50% 50%, #1e293b 0%, #0f172a 100%);
-    padding: 120px 0;
-    color: white;
+    background: #0a0f1a; /* Blu quasi nero per massimo contrasto */
+    padding: 100px 0;
+    color: #ffffff;
     overflow: hidden;
 }
 
@@ -248,59 +247,47 @@ footer {
     flex: 1;
     min-width: 320px;
     max-width: 380px;
-    background: rgba(255, 255, 255, 0.03); /* Effetto vetro scuro */
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 30px;
-    padding: 50px 35px;
-    text-align: left; /* Allineamento a sinistra più professionale */
-    transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
-    position: relative;
+    /* Sfondo leggermente più chiaro del fondo pagina per dare profondità */
+    background: rgba(255, 255, 255, 0.05); 
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 24px;
+    padding: 45px 35px;
+    text-align: left;
+    transition: all 0.4s ease;
 }
 
 .market-box:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: #667eea;
-    transform: translateY(-15px);
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #667eea; /* Colore brand al passaggio del mouse */
+    transform: translateY(-10px);
 }
 
 .market-icon {
     font-size: 3rem;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     display: block;
-    filter: drop-shadow(0 0 15px rgba(102, 126, 234, 0.3));
 }
 
 .market-title {
-    font-size: 1.7rem;
-    font-weight: 700;
+    font-size: 1.6rem;
+    font-weight: 800;
     margin-bottom: 15px;
-    color: #fff;
+    color: #ffffff; /* Bianco puro per il titolo */
 }
 
 .market-text {
     font-size: 1rem;
-    color: #94a3b8; /* Grigio azzurrato leggibile */
+    color: #cbd5e1; /* Grigio chiarissimo, molto leggibile sul nero */
     line-height: 1.7;
     margin-bottom: 25px;
 }
 
 .market-link {
-    color: #667eea;
+    color: #818cf8; /* Colore acceso per il link */
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 0.9rem;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.market-link::after {
-    content: '→';
-    transition: transform 0.3s;
-}
-
-.market-box:hover .market-link::after {
-    transform: translateX(5px);
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
