@@ -109,21 +109,20 @@ nav {
     padding: 15px 5px;
     background: transparent;
     border: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Linea sottile bianca */
-    color: #ffffff; /* Scritta che l'utente digita: BIANCA */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    /* QUESTO RISOLVE IL TUO PROBLEMA */
+    color: #ffffff !important; 
     font-size: 1rem;
     margin-bottom: 20px;
     font-family: inherit;
     transition: border-bottom-color 0.3s;
 }
 
-.form-control::placeholder {
-    color: rgba(255, 255, 255, 0.5); /* Placeholder grigio chiaro */
-}
-
+/* Assicuriamoci che anche il testo che l'utente scrive sia visibile */
 .form-control:focus {
+    color: #ffffff !important;
     outline: none;
-    border-bottom-color: #667eea; /* Linea blu quando clicchi */
+    border-bottom-color: #667eea;
 }
 
 .btn-send {
