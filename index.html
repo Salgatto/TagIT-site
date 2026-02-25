@@ -115,19 +115,59 @@
             <p style="color: #888; margin-bottom: 40px;">Contattaci per una consulenza o per scoprire le nostre soluzioni protette.</p>
     
             <div class="contact-form-wrapper" style="max-width: 500px; margin: 0 auto;">
-                <form action="https://formspree.io/f/meelvdqz" method="POST">
-                    <div class="form-group">
-                        <input type="text" name="name" class="form-control" placeholder="Nome o Azienda" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" name="email" class="form-control" placeholder="Email aziendale" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea name="message" class="form-control" rows="3" placeholder="Come possiamo aiutarti?" required></textarea>
-                    </div>
-                    <button type="submit" class="btn-send">INVIA RICHIESTA</button>
+                <form id="my-form" action="https://formspree.io/f/meelvdqz" method="POST">
+                    <input type="text" name="name" class="form-control" placeholder="Nome o Azienda" required>
+                    <input type="email" name="email" class="form-control" placeholder="Email aziendale" required>
+                    <textarea name="message" class="form-control" rows="3" placeholder="Come possiamo aiutarti?" required></textarea>
+                    <button id="submit-button" type="submit" class="btn-send">INVIA RICHIESTA</button>
+                    <p id="form-status" style="margin-top: 15px; display: none; color: #48bb78; font-weight: bold;"></p>
                 </form>
-    
+                
+                <script>
+                  var form = document.getElementById("my-form");
+                  
+                  async function handleSubmit(event) {
+                    event.preventDefault();
+                    var status = document.getElementById("form-status");
+                    var data = new FormData(event.target);
+                    var button = document.getElementById("submit-button");
+                
+                    button.innerText = "Invio in corso...";
+                    button.disabled = true;
+                
+                    fetch(event.target.action, {
+                      method: form.method,
+                      body: data,
+                      headers: {
+                          'Accept': 'application/json'
+                      }
+                    }).then(response => {
+                      if (response.ok) {
+                        status.innerHTML = "Grazie! Richiesta inviata con successo.";
+                        status.style.display = "block";
+                        form.reset();
+                        button.innerText = "INVIA RICHIESTA";
+                        button.disabled = false;
+                      } else {
+                        response.json().then(data => {
+                          if (Object.hasOwn(data, 'errors')) {
+                            status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+                          } else {
+                            status.innerHTML = "Ops! C'è stato un problema.";
+                          }
+                          status.style.display = "block";
+                          status.style.color = "#f56565";
+                        })
+                      }
+                    }).catch(error => {
+                      status.innerHTML = "Ops! Si è verificato un errore di connessione.";
+                      status.style.display = "block";
+                      status.style.color = "#f56565";
+                    });
+                  }
+                  form.addEventListener("submit", handleSubmit)
+                </script>
+                
                 <div class="contact-footer-info">
                     <span><strong>Direzione Commerciale:</strong> +39 0883 179 4852</span>
                     <span><strong>Email:</strong> info@tagit.cloud</span>
