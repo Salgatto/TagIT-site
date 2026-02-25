@@ -104,23 +104,38 @@ nav {
     margin: 0 auto;
 }
 
+
+/* FORZATURA TOTALE TESTO BIANCO */
+.form-control, 
+input, 
+textarea, 
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus {
+    color: #ffffff !important; /* Forza il testo in bianco */
+    -webkit-text-fill-color: #ffffff !important; /* Specifico per browser basati su Chrome */
+    background-color: transparent !important; /* Evita lo sfondo bianco dell'autofill */
+    transition: background-color 5000s ease-in-out 0s; /* Trucco per mantenere lo sfondo scuro */
+}
+
 .form-control {
     width: 100%;
     padding: 15px 5px;
     background: transparent;
     border: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    /* QUESTO RISOLVE IL TUO PROBLEMA */
-    color: #ffffff !important; 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     font-size: 1rem;
     margin-bottom: 20px;
     font-family: inherit;
-    transition: border-bottom-color 0.3s;
 }
 
-/* Assicuriamoci che anche il testo che l'utente scrive sia visibile */
+/* Colore del placeholder (il testo suggerito) */
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.5) !important;
+    opacity: 1;
+}
+
 .form-control:focus {
-    color: #ffffff !important;
     outline: none;
     border-bottom-color: #667eea;
 }
@@ -143,19 +158,6 @@ nav {
     font-size: 0.9rem;
 }
 /* --- SEZIONI COMUNI --- */
-.form-control {
-    width: 100%;
-    padding: 15px 5px; 
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid #ccc;
-    color: #1a1a1a;
-    font-size: 1rem;
-    margin-bottom: 10px;
-    font-family: inherit;
-}
-
-
 section {
     min-height: 100vh;
     padding: 5rem 2rem;
